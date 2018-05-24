@@ -1,0 +1,20 @@
+﻿<Window x:Class="GUI.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Продукт" Height="291.177" Width="508.824" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+    <Window.Icon>
+        <BitmapImage UriSource="file:///C:/Disk D/University/KPI.ico"/>
+    </Window.Icon>
+    <Grid>
+        <Button x:Name="AddEmployee" Content="Добавити Працівника" HorizontalAlignment="Left" Margin="42,45,0,0" VerticalAlignment="Top" Width="169" Height="33" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Click="AddEmployee_Click"/>
+        <Button x:Name="Calculate" Content="Нарахувати ЗП" HorizontalAlignment="Left" Margin="42,129,0,0" VerticalAlignment="Top" Width="169" Height="33" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Click="Calculate_Click"/>
+        <Button x:Name="ShowEmployee" Content="Переглянути Працівників" HorizontalAlignment="Left" Margin="287,45,0,0" VerticalAlignment="Top" Width="169" Height="33" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Click="ShowEmployee_Click"/>
+        <Button x:Name="Report" Content="Звіти нарахуваннь" HorizontalAlignment="Left" Margin="287,129,0,0" VerticalAlignment="Top" Width="169" Height="33" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Click="Report_Click"/>
+        <Button x:Name="Exit" Content="Вихід" HorizontalAlignment="Left" Margin="375,204,0,0" VerticalAlignment="Top" Width="81" Height="23" Background="Red" Foreground="White" Click="Exit_Click"/>
+    </Grid>
+</Window>

@@ -37,6 +37,15 @@ namespace GUI.Windows
 
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Name.SelectedItem.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Працівник не вибраний!", "Помилка", MessageBoxButton.OK);
+                return;
+            }
             if (Bonus.Text == "")
             {
                 MessageBox.Show("Бонус не заповнено!", "Помилка", MessageBoxButton.OK);
@@ -75,10 +84,7 @@ namespace GUI.Windows
                 emp.Report.Add(report);
                 db.SaveChanges();
                 MessageBox.Show("ЗП Нараховано!");
-                Bonus.Text = "";
-                Sum.Text = "";
-                Start_date.Text = "";
-                End_date.Text = "";
+                this.Close();
             }
             catch (Exception)
             {

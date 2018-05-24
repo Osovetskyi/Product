@@ -58,10 +58,7 @@ namespace GUI.Windows
                 employee.Create(new Employee { Name = name.Text, Qualification = qual.Text, Rahunok = Convert.ToInt32(rahunok.Text), Tub_number = Convert.ToInt32(number.Text) });
                 employee.Save();
                 MessageBox.Show("Користувача додано!");
-                name.Text = "";
-                qual.Text = "";
-                rahunok.Text = "";
-                number.Text = "";
+                this.Close();
             }
             catch (Exception)
             {

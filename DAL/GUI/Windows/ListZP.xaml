@@ -6,12 +6,21 @@
         xmlns:local="clr-namespace:GUI.Windows"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="ZP" Height="450" Width="800" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        Title="Список нарахувань" Height="421.5" Width="542" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
     <Window.Icon>
         <BitmapImage UriSource="file:///C:/Disk D/University/KPI.ico"/>
     </Window.Icon>
     <Grid>
-        <Button  x:Name="Exit" Content="Закрити" HorizontalAlignment="Left" Margin="651,345,0,0" VerticalAlignment="Top" Width="85" Height="25" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Click="Exit_Click"/>
+        <DataGrid x:Name="list" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="297" VerticalAlignment="Top" Width="489" Margin="24,35,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Особовий Рахунок" Binding="{Binding Path= Rahunok}" Width="120" FontWeight="Normal"/>
+                <DataGridTextColumn Header="Бонус" Binding="{Binding Path= Bonus}" Width="120" FontWeight="Normal"/>
+                <DataGridTextColumn Header="Сумма нарахування" Binding="{Binding Path= Summ}" Width="120" FontWeight="Normal"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Path= Date}" Width="120" FontWeight="Normal"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button  x:Name="Exit" Content="Закрити" HorizontalAlignment="Left" Margin="428,348,0,0" VerticalAlignment="Top" Width="85" Height="26" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Click="Exit_Click"/>
+        <Button  x:Name="Print" Content="Надрукувати" HorizontalAlignment="Left" Margin="24,348,0,0" VerticalAlignment="Top" Width="85" Height="26" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
 
     </Grid>
 </Window>

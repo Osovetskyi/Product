@@ -14,10 +14,5 @@ namespace DAL
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Time> Times { get; set; }
         public virtual DbSet<ZP> ZPs { get; set; }
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    Database.SetInitializer<Product>(null);
-        //    base.OnModelCreating(modelBuilder);
-        //}
     }
 }

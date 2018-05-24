@@ -20,7 +20,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button  x:Name="Exit" Content="Закрити" HorizontalAlignment="Left" Margin="428,348,0,0" VerticalAlignment="Top" Width="85" Height="26" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Click="Exit_Click"/>
-        <Button  x:Name="Print" Content="Надрукувати" HorizontalAlignment="Left" Margin="24,348,0,0" VerticalAlignment="Top" Width="85" Height="26" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+        <Button  x:Name="Print" Content="Надрукувати" HorizontalAlignment="Left" Margin="24,348,0,0" VerticalAlignment="Top" Width="85" Height="26" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Click="Print_Click"/>
 
     </Grid>
 </Window>

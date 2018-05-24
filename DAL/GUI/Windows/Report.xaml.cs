@@ -20,9 +20,11 @@ namespace GUI.Windows
     /// </summary>
     public partial class Report : Window
     {
+        private Product db;
         public Report()
         {
             InitializeComponent();
+            db = new Product();
             EmployeeRepository employeeRepository = new EmployeeRepository();
             foreach (var item in employeeRepository.GetList())
             {
@@ -63,15 +65,13 @@ namespace GUI.Windows
             }
             try
             {
-
-                Product db = new Product();
-                var emp = db.Employees.Single(x => x.Name == Name.SelectedItem.ToString());
+                Employee emp = db.Employees.Single(x => x.Name == Name.SelectedItem.ToString());
                 DAL.ZP zp = new DAL.ZP
                 {
                     Bonus = Convert.ToDouble(Bonus.Text),
                     Zp = Convert.ToDouble(Sum.Text)
                 };
-                Time tim = new Time
+                DAL.Time tim = new DAL.Time
                 {
                     Start_date = Start_date.Text,
                     End_date = End_date.Text

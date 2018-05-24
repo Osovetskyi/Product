@@ -57,7 +57,7 @@ namespace GUI.Windows
                 EmployeeRepository employee = new EmployeeRepository();
                 employee.Create(new Employee { Name = name.Text, Qualification = qual.Text, Rahunok = Convert.ToInt32(rahunok.Text), Tub_number = Convert.ToInt32(number.Text) });
                 employee.Save();
-                MessageBox.Show("Користувача додано!");
+                MessageBox.Show("Працівника додано!");
                 this.Close();
             }
             catch (Exception)

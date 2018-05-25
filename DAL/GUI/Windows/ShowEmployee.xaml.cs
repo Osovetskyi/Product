@@ -26,7 +26,7 @@ namespace GUI.Windows
         {
             InitializeComponent();
             getEmployees = new GetEmployees();
-            list.ItemsSource = getEmployees.ReturnEmployees();
+            list.ItemsSource = getEmployees.ReturnEmployees().ToList();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

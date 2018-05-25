@@ -4,7 +4,7 @@ namespace DAL
     using System.Data.Entity;
     using System.Linq;
 
-    public class Product : DbContext
+    public class Product : DbContext, IProduct
     {
         public Product()
             : base("name=Product")

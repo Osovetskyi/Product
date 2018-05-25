@@ -9,14 +9,14 @@ namespace BL
 {
     public class GetEmployees
     {
-        private Product db;
+        public EmployeeRepository employeeRepository;
         public GetEmployees()
         {
-            db = new Product();
+            employeeRepository = new EmployeeRepository();
         }
-        public List<Employee> ReturnEmployees()
+        public IEnumerable<Employee> ReturnEmployees()
         {
-            return db.Employees.ToList();
+            return employeeRepository.GetList();
         }
     }
 }

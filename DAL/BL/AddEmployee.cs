@@ -9,7 +9,7 @@ namespace BL
 {
     public class AddEmployee
     {
-        EmployeeRepository employee;
+        public EmployeeRepository employee;
         public AddEmployee()
         {
             employee = new EmployeeRepository();

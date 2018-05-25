@@ -16,7 +16,7 @@ namespace DAL
             this.db = new Product();
         }
 
-        public IEnumerable<Employee> GetList()
+        public virtual IEnumerable<Employee> GetList()
         {
             return db.Employees;
         }
@@ -26,7 +26,7 @@ namespace DAL
             return db.Employees.Find(id);
         }
 
-        public void Create(Employee emp)
+        public virtual void Create(Employee emp)
         {
             db.Employees.Add(emp);
         }
@@ -43,7 +43,7 @@ namespace DAL
                 db.Employees.Remove(emp);
         }
 
-        public void Save()
+        public virtual void Save()
         {
             db.SaveChanges();
         }

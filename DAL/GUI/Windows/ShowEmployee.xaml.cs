@@ -1,4 +1,5 @@
 ﻿using DAL;
+using BL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +21,12 @@ namespace GUI.Windows
     /// </summary>
     public partial class ShowEmployee : Window
     {
-        private Product db;
+        GetEmployees getEmployees;
         public ShowEmployee()
         {
             InitializeComponent();
-            db = new Product();
-            list.ItemsSource = db.Employees.ToList();
+            getEmployees = new GetEmployees();
+            list.ItemsSource = getEmployees.ReturnEmployees();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -35,7 +36,7 @@ namespace GUI.Windows
 
         private void Print_Click(object sender, RoutedEventArgs e)
         {
-            var pd = new PrintDialog();
+            PrintDialog pd = new PrintDialog();
             var result = pd.ShowDialog();
             if (result.HasValue && result.Value)
             {

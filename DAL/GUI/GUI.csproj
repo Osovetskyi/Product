@@ -65,11 +65,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Windows\AddEmployee.xaml.cs">
-      <DependentUpon>AddEmployee.xaml</DependentUpon>
+    <Compile Include="Windows\AddEmployeeForm.xaml.cs">
+      <DependentUpon>AddEmployeeForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Report.xaml.cs">
-      <DependentUpon>Report.xaml</DependentUpon>
+    <Compile Include="Windows\ReportForm.xaml.cs">
+      <DependentUpon>ReportForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ShowEmployee.xaml.cs">
       <DependentUpon>ShowEmployee.xaml</DependentUpon>
@@ -115,11 +115,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\AddEmployee.xaml">
+    <Page Include="Windows\AddEmployeeForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Report.xaml">
+    <Page Include="Windows\ReportForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,6 +133,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{de1d2f58-4906-4998-ad39-1498d8ed1398}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{a11297ad-0282-454e-a956-125e44f84b90}</Project>
       <Name>DAL</Name>

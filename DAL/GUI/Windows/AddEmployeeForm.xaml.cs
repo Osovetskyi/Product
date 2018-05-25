@@ -1,4 +1,5 @@
 ﻿using DAL;
+using BL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,11 @@ namespace GUI.Windows
     /// </summary>
     public partial class AddEmployee : Window
     {
+        BL.AddEmployee addEmployee;
         public AddEmployee()
         {
             InitializeComponent();
+            addEmployee = new BL.AddEmployee();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -51,16 +54,13 @@ namespace GUI.Windows
             {
                 MessageBox.Show("Номер не заповнено!", "Помилка", MessageBoxButton.OK);
                 return;
-            }          
-            try
+            }
+            if (addEmployee.AddEmp(name.Text, qual.Text, rahunok.Text, number.Text))
             {
-                EmployeeRepository employee = new EmployeeRepository();
-                employee.Create(new Employee { Name = name.Text, Qualification = qual.Text, Rahunok = Convert.ToInt32(rahunok.Text), Tub_number = Convert.ToInt32(number.Text) });
-                employee.Save();
                 MessageBox.Show("Працівника додано!");
                 this.Close();
             }
-            catch (Exception)
+            else
             {
                 MessageBox.Show("Введено не корректні дані!", "Помилка", MessageBoxButton.OK);
                 return;

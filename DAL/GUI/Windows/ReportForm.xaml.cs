@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DAL;
+using BL;
 
 namespace GUI.Windows
 {
@@ -20,18 +21,21 @@ namespace GUI.Windows
     /// </summary>
     public partial class Report : Window
     {
-        private Product db;
+        AddReport addReport;
         public Report()
         {
             InitializeComponent();
-            db = new Product();
+            AddComb();
+            addReport = new AddReport();
+        }
+        private void AddComb()
+        {
             EmployeeRepository employeeRepository = new EmployeeRepository();
             foreach (var item in employeeRepository.GetList())
             {
                 Name.Items.Add(item.Name);
             }
         }
-
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -63,35 +67,16 @@ namespace GUI.Windows
                 MessageBox.Show("Дату не заповнено!", "Помилка", MessageBoxButton.OK);
                 return;
             }
-            try
+            if (addReport.AddRep(Name.SelectedItem.ToString(), Bonus.Text, Sum.Text, Start_date.Text, End_date.Text))
             {
-                Employee emp = db.Employees.Single(x => x.Name == Name.SelectedItem.ToString());
-                DAL.ZP zp = new DAL.ZP
-                {
-                    Bonus = Convert.ToDouble(Bonus.Text),
-                    Zp = Convert.ToDouble(Sum.Text)
-                };
-                DAL.Time tim = new DAL.Time
-                {
-                    Start_date = Start_date.Text,
-                    End_date = End_date.Text
-                };
-                DAL.Report report = new DAL.Report
-                {
-                    Time = tim,
-                    ZP = zp
-                };
-                emp.Report.Add(report);
-                db.SaveChanges();
                 MessageBox.Show("ЗП Нараховано!");
                 this.Close();
             }
-            catch (Exception)
+            else
             {
                 MessageBox.Show("Введено не корректні дані!", "Помилка", MessageBoxButton.OK);
                 return;
             }
-           
         }
     }
 }
